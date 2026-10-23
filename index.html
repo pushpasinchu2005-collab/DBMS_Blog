@@ -1,0 +1,518 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>History of DBMS | DBMS Learning Blog</title>
+
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #263238;
+            line-height: 1.8;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #142d4e;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav h2 {
+            font-size: 23px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #65d6ce;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #142d4e, #176b87);
+            color: white;
+            text-align: center;
+            padding: 85px 20px;
+        }
+
+        .hero .tag {
+            color: #a9f0e9;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin: 18px auto;
+            max-width: 850px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 15px auto;
+            color: #e1edf7;
+        }
+
+        .hero .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #65d6ce;
+            color: #142d4e;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background-color: white;
+            margin-bottom: 25px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(20, 45, 78, 0.07);
+        }
+
+        .section h2 {
+            color: #176b87;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #dcecf1;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #142d4e;
+            margin-top: 15px;
+        }
+
+        .section ul {
+            padding-left: 25px;
+        }
+
+        /* History Timeline */
+        .timeline {
+            border-left: 3px solid #176b87;
+            margin: 20px 0 10px 10px;
+            padding-left: 25px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 13px;
+            height: 13px;
+            background-color: #65d6ce;
+            border: 3px solid #176b87;
+            border-radius: 50%;
+            position: absolute;
+            left: -36px;
+            top: 8px;
+        }
+
+        .year {
+            color: #176b87;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background-color: #e8f7f6;
+            border-left: 5px solid #176b87;
+            padding: 18px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        /* Comparison Table */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #d9e2ec;
+            padding: 13px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #176b87;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f0f6fa;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #142d4e;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            color: #dce8f2;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 650px) {
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .section {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h2>DBMS Blog</h2>
+
+        <div>
+            <a href="#introduction">Introduction</a>
+            <a href="#history">History</a>
+            <a href="#when-not">When Not to Use</a>
+            <a href="#conclusion">Conclusion</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <p class="tag">DATABASE TECHNOLOGY • LEARNING BLOG</p>
+
+        <h1>History of DBMS and When Not to Use DBMS</h1>
+
+        <p>
+            Discover how database management systems evolved
+            and understand when a simpler data storage solution
+            might be the better choice.
+        </p>
+
+        <a href="#introduction" class="button">Explore the Blog ↓</a>
+    </header>
+
+    <main class="container">
+
+        <!-- Introduction -->
+        <section class="section" id="introduction">
+            <h2>01. Introduction to DBMS</h2>
+
+            <p>
+                A Database Management System (DBMS) is software
+                used to store, organize, retrieve, update, and
+                manage data efficiently.
+            </p>
+
+            <p>
+                DBMS technology is widely used in banking,
+                education, hospitals, e-commerce, and business
+                applications.
+            </p>
+
+            <div class="highlight">
+                <strong>Examples:</strong>
+                MySQL, Oracle Database, PostgreSQL, SQLite,
+                and MongoDB.
+            </div>
+        </section>
+
+        <!-- History -->
+        <section class="section" id="history">
+            <h2>02. History and Evolution of DBMS</h2>
+
+            <p>
+                Database technology has developed over several
+                decades to make data storage and retrieval
+                more efficient.
+            </p>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <p class="year">Before the 1960s</p>
+                    <h3>File-Based Systems</h3>
+                    <p>
+                        Data was stored in separate files.
+                        Managing, sharing, and updating
+                        information could be difficult.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="year">1960s</p>
+                    <h3>Hierarchical and Network Models</h3>
+                    <p>
+                        Early database models introduced
+                        structured ways to organize records
+                        and represent relationships.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="year">1970</p>
+                    <h3>Relational Database Model</h3>
+                    <p>
+                        Edgar F. Codd introduced the relational
+                        model, organizing data into relations
+                        commonly represented as tables.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="year">1980s–1990s</p>
+                    <h3>Relational DBMS and SQL</h3>
+                    <p>
+                        Relational databases became widely
+                        used, and SQL became an important
+                        language for working with data.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="year">2000s–2010s</p>
+                    <h3>NoSQL and Cloud Databases</h3>
+                    <p>
+                        New database technologies supported
+                        flexible data structures, distributed
+                        applications, and cloud-based services.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="year">2020s–Today</p>
+                    <h3>Modern Database Technologies</h3>
+                    <p>
+                        Cloud-native databases, managed
+                        database services, and specialized
+                        systems support modern applications.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Importance -->
+        <section class="section">
+            <h2>03. Why Is DBMS Important?</h2>
+
+            <ul>
+                <li>Organizes large amounts of data.</li>
+                <li>Makes searching and updating data easier.</li>
+                <li>Provides access control and security features.</li>
+                <li>Helps maintain data accuracy and consistency.</li>
+                <li>Supports multiple users working with data.</li>
+                <li>Provides backup and recovery capabilities.</li>
+            </ul>
+        </section>
+
+        <!-- When Not to Use DBMS -->
+        <section class="section" id="when-not">
+            <h2>04. When Not to Use DBMS</h2>
+
+            <p>
+                A DBMS is useful, but it may be unnecessary
+                when the task is small and simple.
+            </p>
+
+            <h3>1. Small Amounts of Data</h3>
+            <p>
+                A simple list may be easier to manage using
+                a text file or spreadsheet.
+            </p>
+
+            <h3>2. Temporary Data</h3>
+            <p>
+                Data used only for a short calculation may
+                not need permanent database storage.
+            </p>
+
+            <h3>3. Simple Configuration Files</h3>
+            <p>
+                Application settings can often be stored
+                in text, JSON, or YAML files.
+            </p>
+
+            <h3>4. Static Websites</h3>
+            <p>
+                A website containing only fixed information
+                may work without a database.
+            </p>
+
+            <h3>5. Limited Resources</h3>
+            <p>
+                A full DBMS may be too complex for a device
+                with very limited memory or storage.
+            </p>
+
+            <div class="highlight">
+                <strong>Remember:</strong>
+                Choose the simplest tool that meets your
+                project's storage, security, and reliability
+                requirements. Small applications may also
+                benefit from lightweight databases such as SQLite.
+            </div>
+        </section>
+
+        <!-- Comparison -->
+        <section class="section">
+            <h2>05. DBMS vs. Simpler Alternatives</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Situation</th>
+                            <th>Suitable Option</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Small personal list</td>
+                            <td>Spreadsheet</td>
+                        </tr>
+
+                        <tr>
+                            <td>Simple application settings</td>
+                            <td>JSON or text file</td>
+                        </tr>
+
+                        <tr>
+                            <td>Temporary calculations</td>
+                            <td>In-memory variables</td>
+                        </tr>
+
+                        <tr>
+                            <td>Local application with structured data</td>
+                            <td>SQLite or another embedded database</td>
+                        </tr>
+
+                        <tr>
+                            <td>Large multi-user application</td>
+                            <td>MySQL or PostgreSQL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="section" id="conclusion">
+            <h2>06. Conclusion</h2>
+
+            <p>
+                DBMS technology has evolved from file-based
+                systems to relational, distributed, and
+                cloud-based databases. It plays an important
+                role in modern applications by helping
+                organizations manage data efficiently.
+            </p>
+
+            <p>
+                However, a DBMS is not necessary for every
+                situation. For small, temporary, or simple
+                tasks, files and spreadsheets may be enough.
+                Selecting the right solution depends on the
+                project's actual requirements.
+            </p>
+        </section>
+
+        <!-- References -->
+        <section class="section">
+            <h2>07. References</h2>
+
+            <ul>
+                <li>
+                    E. F. Codd, "A Relational Model of Data
+                    for Large Shared Data Banks" (1970).
+                </li>
+                <li>
+                    <a href="https://dev.mysql.com/doc/"
+                       target="_blank" rel="noopener">
+                        Official MySQL Documentation
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.postgresql.org/docs/"
+                       target="_blank" rel="noopener">
+                        Official PostgreSQL Documentation
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.sqlite.org/docs.html"
+                       target="_blank" rel="noopener">
+                        Official SQLite Documentation
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h3>DBMS Learning Blog</h3>
+        <p>Understanding databases, one concept at a time.</p>
+        <p>Educational Project | HTML & CSS</p>
+    </footer>
+
+</body>
+</html>
+```
